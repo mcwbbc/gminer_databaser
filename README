@@ -1,0 +1,3 @@
+Databaser:
+
+Reads messages from the queue and saves the Annotations, Annotation Closures or Ontology Terms into the database.
