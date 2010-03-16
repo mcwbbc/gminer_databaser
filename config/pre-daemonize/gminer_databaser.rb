@@ -1,0 +1,5 @@
+require 'active_record'
+require 'annotation'
+require 'annotation_closure'
+require 'ontology'
+require 'ontology_term'

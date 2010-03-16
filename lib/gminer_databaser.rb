@@ -12,7 +12,7 @@ class GminerDatabaser
       when 'saveclosure'
         AnnotationClosure.persist(message['geo_accession'], message['field_name'], message['term_id'], message['closure_term'])
     end
-    DaemonKit.logger.debug("saving: #{message}")
+#    DaemonKit.logger.debug("saving: #{message}")
   end
 
 end

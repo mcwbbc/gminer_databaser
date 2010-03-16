@@ -31,9 +31,11 @@ DaemonKit::AMQP.run do
   end
 
   amq = ::MQ.new
+  amq.prefetch(1)
   databaser = GminerDatabaser.new
 
-  amq.queue(GminerDatabaser::DATABASER_QUEUE_NAME).subscribe do |msg|
+  amq.queue(GminerDatabaser::DATABASER_QUEUE_NAME, :durable => true).subscribe do |msg|
+#    DaemonKit.logger.debug("MSG: #{msg}")
     databaser.process(msg)
   end
 end
