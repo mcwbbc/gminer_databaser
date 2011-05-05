@@ -1,0 +1,7 @@
+development:
+  host: localhost
+  database: gminer_development
+
+test:
+  host: localhost
+  database: gminer_test

@@ -16,24 +16,45 @@
 # http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 
 development:
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: true
   database: gminer_development
   pool: 5
   username: root
-  password:
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  password: root
+  socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &TEST
-  adapter: mysql
+  adapter: mysql2
   encoding: utf8
   reconnect: false
   database: gminer_test
   pool: 5
   username: root
-  password:
-  socket: /opt/local/var/run/mysql5/mysqld.sock
+  password: root
+  socket: /tmp/mysql.sock
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: gminer_production
+  pool: 5
+  username: root
+  password: root
+  socket: /tmp/mysql.sock
+
+staging:
+  adapter: mysql2
+  encoding: utf8
+  database: gminer_staging
+  pool: 5
+  username: root
+  password: root
+  socket: /tmp/mysql.sock
+
+cucumber:
+ <<: *TEST
